@@ -1,0 +1,83 @@
+package ZPractise;
+
+import java.util.Scanner;
+
+public class Factorial {
+public static void main(String[] args) {
+	Scanner s = new Scanner(System.in);
+//	Factorial f = new Factorial();   // If method is static no need of Object creation!
+	System.out.println("Enter the Number: ");
+	int a = s. nextInt();
+	fact(a);
+	fibo(a);
+	EvenOdd(a);
+	Armstrong(a);
+}
+
+
+
+static void fact(int n) {
+	int f = 1;
+	for(int i=1;i<=n;i++) {
+		f = f*i;
+	}
+	System.out.println("Factorial is:"+f);
+}
+
+static void fibo(int n) {
+	int f = 0,s=1,t =0;
+	System.out.print("Fibonacces series: "+f+" "+s+" ");
+	for (int i = 3;i<=n;i++){
+		t = f+s;
+		f = s;
+		s = t;
+		System.out.print(t+" ");
+	}
+	System.out.println();
+}
+
+static void EvenOdd( int n) {
+	if(n%2 == 0) 
+		System.out.println(n+" It's Even number!");
+	else
+		System.out.println(n+" It's Odd number!");
+}
+
+static void Armstrong(int n) {
+	int t = n,sum = 0;
+	int count = count(n);
+	int d;
+	while(n>0) {
+		d=n%10;
+		sum += getPow(d,count);
+		n= n/10;
+	}
+	if(t==sum) 
+		System.out.println("Its Armstrong!");
+	else
+		System.out.println("Its Not Armstrong!");
+}
+
+
+
+private static int getPow(int d, int count) {
+	int prod = 1;
+	for( int i=1;i<=count;i++) {
+		prod = d * prod;
+	}
+	return d;
+}
+
+
+
+private static int count(int n) {
+	int count = 0;
+	while(n>0) {
+		count++;
+		n = n/10;
+		
+	}
+	return count;
+}
+
+}

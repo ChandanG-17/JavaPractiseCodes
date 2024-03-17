@@ -1,0 +1,36 @@
+package ZPractise;
+
+import java.util.Scanner;
+
+public class Factorial {
+public static void main(String[] args) {
+	Scanner s = new Scanner(System.in);
+//	Factorial f = new Factorial();   // If method is static no need of Object creation!
+	System.out.println("Enter the Number: ");
+	int a = s. nextInt();
+	fact(a);
+	fibo(a);
+	
+}
+
+
+
+static void fact(int n) {
+	int f = 1;
+	for(int i=1;i<=n;i++) {
+		f = f*i;
+	}
+	System.out.println("Factorial is:"+f);
+}
+
+static void fibo(int n) {
+	int f = 0,s=1,t =0;
+	System.out.print("Fibonacces series: "+f+" "+s);
+	while (n!=0) {
+		t = f+s;
+		f = s;
+		s = t;
+		System.out.println(t);
+	}
+}
+}
